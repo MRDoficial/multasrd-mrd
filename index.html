@@ -3,79 +3,55 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>MRD MultasRD - Consulta Placa y Cédula RD</title>
+<title>MRD MultasRD - Consulta Real PGR</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@700;900&display=swap');
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Outfit',sans-serif}
 body{min-height:100vh;background:#f6f8fc;display:flex;flex-direction:column}
-.header-top{height:50px;background:#0a3a7a;color:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;text-align:center;padding:0 10px}
-.main{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:16px}
-.card{background:#fff;border-radius:28px;box-shadow:0 10px 30px rgba(0,0,0,.1);padding:20px;width:100%;max-width:420px}
-.tabs{display:flex;gap:8px;margin-bottom:16px}
-.tab{flex:1;padding:12px;border-radius:16px;border:none;font-weight:900;font-size:14px;cursor:pointer}
-.tab-active{background:#0a3a7a;color:#fff} .tab-inactive{background:#f0f2f5;color:#6b7280}
-.input{width:100%;padding:20px;border-radius:16px;background:#f2f5ff;border:2px solid transparent;outline:none;font-weight:900;font-size:18px;color:#0a3a7a}
-.btn{width:100%;margin-top:16px;background:#0a3a7a;color:#fff;font-weight:900;padding:20px;border-radius:16px;border:none;font-size:16px;cursor:pointer}
-.footer{height:180px;background:#eef2ff;border-top:1px solid #dbeafe;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 20px;gap:6px}
-.joel{margin-top:24px;background:rgba(255,255,255,.6);backdrop-filter:blur(10px);border-radius:24px;border:1px solid rgba(255,255,255,.6);padding:32px;display:flex;align-items:center;justify-content:center;gap:8px;width:100%;max-width:420px}
+.top{height:44px;background:#0a3a7a;color:#fff;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;letter-spacing:1px;gap:8px}
+.top b{color:#00e5ff}
+.hd{height:56px;background:#fff;border-bottom:1px solid #e2e8f0;display:flex;align-items:center;justify-content:space-between;padding:0 16px}
+.card{flex:1;display:flex;flex-direction:column;max-width:500px;width:100%;margin:0 auto;background:#fff;box-shadow:0 0 30px rgba(0,0,0,.06)}
+.inputBar{display:flex;gap:8px;padding:12px;background:#f8fafc;border-bottom:1px solid #e2e8f0}
+.input{flex:1;padding:14px 16px;border-radius:14px;background:#eef2ff;border:2px solid transparent;outline:none;font-weight:900;font-size:16px;color:#0a3a7a}
+.btn{background:#0a3a7a;color:#fff;font-weight:900;padding:14px 18px;border-radius:14px;border:none;font-size:13px;cursor:pointer}
+.iframeWrap{flex:1;position:relative;background:#fff}
+.iframeWrap iframe{width:100%;height:100%;border:none;display:block;min-height:70vh}
+.badge{position:absolute;top:8px;left:8px;background:#0a3a7a;color:#fff;font-size:9px;font-weight:900;padding:6px 10px;border-radius:20px;z-index:5}
+.foot{height:70px;background:#eef2ff;border-top:1px solid #dbeafe;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px}
 </style>
 </head>
 <body>
-<div class="header-top">“La constancia convierte lo imposible en rutina.”</div>
-<div style="display:flex;align-items:center;gap:8px;padding:12px 16px">
-<div style="width:36px;height:36px;background:#0a3a7a;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900">MRD</div>
-<div><p style="font-weight:900;color:#0a3a7a;line-height:1;font-size:18px">MRD</p><p style="font-size:10px;color:#00b7eb;font-weight:700;letter-spacing:2px">MultasRD</p></div>
+<div class="top">🔒 CONEXIÓN REAL • <b>multas.pgr.gob.do</b> • 100% OFICIAL</div>
+<div class="hd">
+<div style="display:flex;align-items:center;gap:8px">
+<div style="width:34px;height:34px;background:#0a3a7a;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900">MRD</div>
+<div><p style="font-weight:900;color:#0a3a7a">MultasRD</p><p style="font-size:9px;color:#00b7eb;font-weight:700">REAL PGR</p></div>
 </div>
-<div class="main">
+<a href="https://multas.pgr.gob.do/consultas/consultasciudadano" target="_blank" style="font-size:10px;font-weight:900;color:#0a3a7a;text-decoration:none;border:1px solid #0a3a7a;padding:8px 12px;border-radius:20px">Abrir PGR ↗</a>
+</div>
 <div class="card">
-<div class="tabs">
-<button id="bP" class="tab tab-active">PLACA</button>
-<button id="bC" class="tab tab-inactive">CÉDULA</button>
-</div>
-<input id="q" class="input" placeholder="A123456">
+<div class="inputBar">
+<input id="q" class="input" placeholder="001-1234567-8">
 <button id="btn" class="btn">CONSULTAR</button>
-<div id="res"></div>
 </div>
-<div class="joel">
-<span style="font-size:30px;font-weight:900;letter-spacing:0.12em;color:rgba(15,23,42,0.15);text-transform:uppercase;">JoelvisionX</span>
-<svg width="22" height="16" viewBox="0 0 28 20" style="opacity:0.35"><path d="M27.97 3.12c-.35-1.3-1.38-2.33-2.68-2.68C23 0 13.99 0 13.99 0S4.98 0 2.69.44C1.39.79.36 1.82.01 3.12 0 5.65 0 8.18 0 8.18v1.64c0 2.53.01 5.06.44 5.06.35 1.3 1.38 2.33 2.68 2.68C5.41 20 13.99 20 13.99 20s9.01 0 11.3-.44c1.3-.35 2.33-1.38 2.68-2.68.44-2.3.44-5.06.44-5.06V8.18c0-2.53-.01-5.06-.44-5.06zM11.2 13.6V6.4l7.84 3.6L11.2 13.6z" fill="#FF0000"/></svg>
+<div style="padding:8px 12px;background:#fffbe6;border-bottom:1px solid #ffe69c;display:flex;gap:8px;align-items:center">
+<span style="font-size:16px">💡</span>
+<p style="font-size:10px;font-weight:700;color:#664d03">Escribe tu cédula arriba y dale CONSULTAR. Abajo está la página oficial de la PGR con tu nombre real.</p>
+</div>
+<div class="iframeWrap">
+<div class="badge">PGR OFICIAL EN VIVO</div>
+<iframe id="pgr" src="https://multas.pgr.gob.do/consultas/consultasciudadano"></iframe>
 </div>
 </div>
-<div class="footer">
-<p style="font-size:12px;font-weight:700;letter-spacing:2px;color:#5a6fc5;opacity:.6">PUBLICIDAD</p>
-<p style="font-size:15px;font-weight:900;color:#0a3a7a;max-width:300px">“Hazlo con miedo, pero hazlo. Cada intento cuenta.”</p>
-<p style="margin-top:8px;font-size:8px;font-weight:700;letter-spacing:3px;color:#94a3b8;text-transform:uppercase">República Dominicana</p>
+<div class="foot">
+<p style="font-size:12px;font-weight:900;color:#0a3a7a;opacity:.3">JoelvisionX</p>
+<p style="font-size:9px;font-weight:700;color:#94a3b8">REPÚBLICA DOMINICANA • DATOS OFICIALES PGR</p>
 </div>
 <script>
-const NOMBRES=["Juan","María","Carlos","Ana","José","Luisa","Pedro","Carmen","Luis","Yolanda","Miguel","Rosa","Jorge","Elena","Francisco","Isabel","Ramón","Altagracia","Antonio","Johanna","David"];
-const APELLIDOS=["Pérez","Rodríguez","García","Martínez","López","Santos","Guzmán","Reyes","De La Cruz","Morillo","Castillo","Hernández","Polanco","Peña","Tavárez","Cabrera","Méndez"];
-const MOTIVOS=[{m:"Pasarse luz roja",art:"Art. 96 Ley 63-17",monto:1667,por:"No respetar semáforo en rojo."},{m:"Sin casco protector",art:"Art. 135-C",monto:1000,por:"Casco obligatorio."},{m:"Sin licencia vigente",art:"Art. 29",monto:1000,por:"Licencia vencida."},{m:"Sin cinturón",art:"Art. 231",monto:1667,por:"Obligatorio en todos los asientos."},{m:"Uso de celular",art:"Art. 92",monto:1667,por:"Manipular móvil al conducir."},{m:"Exceso velocidad",art:"Art. 264",monto:1000,por:"Superar límite."},{m:"Mal estacionado + grúa",art:"Art. 237",monto:5000,por:"En acera o zona prohibida."}];
-function hash(s){let h=0;for(let i=0;i<s.length;i++)h=(h*31+s.charCodeAt(i))|0;return Math.abs(h);}
-function consultar(){
- try{
-  const q=document.getElementById('q').value.trim().toUpperCase();
-  const r=document.getElementById('res');
-  if(!q){r.innerHTML='<p style="margin-top:16px;text-align:center;color:#dc2626;font-weight:900">Escribe placa o cédula</p>';return;}
-  const h=hash(q);
-  const nombre=NOMBRES[h%NOMBRES.length]+" "+APELLIDOS[(h>>3)%APELLIDOS.length]+" "+APELLIDOS[(h>>7)%APELLIDOS.length];
-  const cant=h%4;
-  if(cant===0){
-   r.innerHTML='<div style="margin-top:20px;background:#f0fdf4;border:1px solid #bbf7d0;color:#166534;border-radius:22px;padding:20px;text-align:center"><p style="font-weight:900;font-size:16px">'+nombre+'</p><p style="margin-top:8px;font-weight:900">✅ SIN REGISTROS</p><p style="font-size:12px;margin-top:4px">'+q+' al día</p></div>';
-  }else{
-   let total=0;let html='';
-   for(let i=0;i<cant;i++){
-    const mt=MOTIVOS[(h+i*17)%MOTIVOS.length];total+=mt.monto;
-    const dias=(h%90)+i*13;const fecha=new Date();fecha.setDate(fecha.getDate()-dias);
-    html+='<div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:16px;padding:16px;margin-top:12px"><div style="display:flex;justify-content:space-between"><div><p style="font-weight:900;font-size:13px;color:#0a3a7a">'+mt.m+'</p><p style="font-size:10px;color:#94a3b8;margin-top:4px">'+mt.art+' • '+fecha.toLocaleDateString('es-DO')+'</p><p style="font-size:11px;color:#475569;margin-top:8px"><b>Por qué:</b> '+mt.por+'</p></div><p style="font-weight:900">RD$'+mt.monto.toLocaleString()+'</p></div></div>';
-   }
-   r.innerHTML='<div style="margin-top:20px;background:#0a3a7a;color:#fff;border-radius:22px;padding:20px"><p style="font-weight:900">'+nombre+'</p><p style="font-size:11px;opacity:.6;margin-top:4px">'+q+' • '+cant+' MULTAS • TOTAL RD$'+total.toLocaleString()+'</p>'+html+'</div>';
-  }
- }catch(e){document.getElementById('res').innerHTML='<p style="color:red;text-align:center;margin-top:20px;font-weight:900">Error: '+e.message+'</p>';}
-}
-document.getElementById('bP').onclick=function(){document.getElementById('bP').className='tab tab-active';document.getElementById('bC').className='tab tab-inactive';document.getElementById('q').placeholder='A123456';};
-document.getElementById('bC').onclick=function(){document.getElementById('bC').className='tab tab-active';document.getElementById('bP').className='tab tab-inactive';document.getElementById('q').placeholder='001-1234567-8';};
-document.getElementById('btn').onclick=consultar;
-document.getElementById('q').addEventListener('keydown',function(e){if(e.key==='Enter')consultar();});
+const iframe=document.getElementById('pgr');const q=document.getElementById('q');const btn=document.getElementById('btn');
+btn.onclick=()=>{const val=q.value.trim();if(!val){alert('Escribe tu cédula');return;}navigator.clipboard.writeText(val).then(()=>{alert('✅ Cédula '+val+' copiada. Pégala abajo en la PGR oficial');}).catch(()=>{alert('Cédula: '+val);});iframe.scrollIntoView({behavior:'smooth'});setTimeout(()=>{try{const t=iframe.contentDocument;}catch(e){if(confirm('La PGR bloqueó la vista dentro de MRD. ¿Abrir en pestaña nueva?')){window.open('https://multas.pgr.gob.do/consultas/consultasciudadano','_blank');}}},1500);};
+q.addEventListener('keydown',e=>{if(e.key==='Enter')btn.click();});
 </script>
 </body>
 </html>
